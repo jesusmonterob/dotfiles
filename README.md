@@ -60,11 +60,11 @@ My `~/.extra` looks something like this:
 # Git credentials
 # Not in the repository, to prevent people from accidentally committing under my name
 GIT_AUTHOR_NAME="My name"
-GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
-git config --global user.name "$GIT_AUTHOR_NAME"
+GIT_COMMITTER_NAME="${GIT_AUTHOR_NAME}"
+git config --global user.name "${GIT_AUTHOR_NAME}"
 GIT_AUTHOR_EMAIL="myemail@whatever.com"
-GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
-git config --global user.email "$GIT_AUTHOR_EMAIL"
+GIT_COMMITTER_EMAIL="${GIT_AUTHOR_EMAIL}"
+git config --global user.email "${GIT_AUTHOR_EMAIL}"
 ```
 
 You could also use `~/.extra` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork this repository](https://github.com/jesusmonterob/dotfiles/fork) instead, though.
@@ -91,12 +91,6 @@ Some of the functionality of these dotfiles depends on formulae installed by `br
 
 Suggestions/improvements
 [welcome](https://github.com/jesusmonterob/dotfiles/issues)!
-
-## Author
-
-| [![twitter/mathias](http://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](http://twitter.com/mathias "Follow @mathias on Twitter") |
-|---|
-| [Mathias Bynens](https://mathiasbynens.be/) |
 
 ## Thanks to…
 
