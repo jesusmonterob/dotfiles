@@ -6,7 +6,7 @@
 
 ### Using Git and the bootstrap script
 
-You can clone the repository wherever you want. (I like to keep it in `~/Projects/dotfiles`, with `~/dotfiles` as a symlink.) The bootstrapper script will pull in the latest version and copy the files to your home folder.
+You can clone the repository wherever you want. (I like to keep it in my Sync folder with `~/dotfiles` as a symlink.) The bootstrapper script will pull in the latest version and copy the files to your home folder.
 
 ```bash
 git clone https://github.com/jesusmonterob/dotfiles.git && cd dotfiles && source bootstrap.sh
@@ -41,9 +41,14 @@ If `~/.path` exists, it will be sourced along with the other files, before any f
 Here’s an example `~/.path` file that adds `/usr/local/bin` to the `$PATH`:
 
 ```bash
-export PATH="/usr/local/bin:$PATH"
-```
+export NVM_DIR="$HOME/.nvm"
+ [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export M2_HOME=/usr/local/Cellar/maven/3.3.9/libexec
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home
+export ANDROID_SDK=$HOME/Library/Android/sdk
+export PATH="/usr/local/bin:$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin:$M2_HOME/bin"
 
+```
 ### Add custom commands without creating a new fork
 
 If `~/.extra` exists, it will be sourced along with the other files. You can use this to add a few custom commands without the need to fork this entire repository, or to add commands you don’t want to commit to a public repository.
@@ -51,6 +56,7 @@ If `~/.extra` exists, it will be sourced along with the other files. You can use
 My `~/.extra` looks something like this:
 
 ```bash
+
 # Git credentials
 # Not in the repository, to prevent people from accidentally committing under my name
 GIT_AUTHOR_NAME="My name"
